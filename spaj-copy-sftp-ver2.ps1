@@ -13,7 +13,7 @@ $day = (Get-Date).ToString("dd")
 $reportdate = (Get-Date).AddDays(-1).ToString("yyyyMMdd")
 
   # lokasi spaj di lokal
-$path = "\\eli-fs-node01\spaj$"
+$path = "path/to/spaj"
 #$path = "D:\WORK\Task - project\Underwriting-SPAJ\SFTP"
 $childpath = "$date\$day\$depart\$area\$loc"
 $localpath = "$path\01_SPAJ_SOA\$childpath"
@@ -23,8 +23,8 @@ $pathreport = "$path\01_SPAJ_SOA\$date\$day"
 
  # SFTP SESSION
    # authentication
-$passwd = ConvertTo-SecureString "Policy123!" -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential ("sys-ftp-policy-printing", $passwd)
+$passwd = ConvertTo-SecureString "password" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("username", $passwd)
    # create session SFTP 
 $sftpsession = New-SFTPSession -ComputerName sftp-uat.myequity.id -Credential $creds -AcceptKey
 
@@ -213,24 +213,5 @@ Start-Sleep -Seconds 3
 
 copySPAJ -depart "Agency" -area 'Area I' -loc "BN Semarang"
 copySPAJ -depart "Agency" -area 'Area I' -loc "Indramayu"
-copySPAJ -depart "Agency" -area 'Area II' -loc "Denpasar"
-copySPAJ -depart "Agency" -area 'Area II' -loc "Makassar"
-copySPAJ -depart "Agency" -area 'Area II' -loc "Medan"
-copySPAJ -depart "Agency" -area 'Area II' -loc "Palembang"
-copySPAJ -depart "Agency" -area 'Area III' -loc "Bandung"
-copySPAJ -depart "Agency" -area 'Area III' -loc "Cirebon"
-copySPAJ -depart "Agency" -area 'Area III' -loc "Head Office"
-copySPAJ -depart "Agency" -area 'Area III' -loc "Jakarta"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Kediri"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Magelang-Yogja"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Malang"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Solo"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Surabaya"
-copySPAJ -depart "Agency" -area 'Area IV' -loc "Timika"
-copySPAJ -depart "Inbranch" -area 'Area I' -loc "Bali"
-copySPAJ -depart "Inbranch" -area 'Area II' -loc "Jakarta"
-copySPAJ -depart "Inbranch" -area 'Area III' -loc "Bandung"
-copySPAJ -depart "Inbranch" -area 'Area IV' -loc "Semarang"
-copySPAJ -depart "Inbranch" -area 'Area IV' -loc "Solo"
-copySPAJ -depart "Inbranch" -area 'Area IV' -loc "Surabaya"
+
 
