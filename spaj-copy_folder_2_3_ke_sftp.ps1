@@ -13,7 +13,6 @@ $day = (Get-Date).ToString("dd")
 $reportdate = (Get-Date).AddDays(-1).ToString("yyyyMMdd")
 
   # lokasi spaj di lokal
-#$path = "\\eli-fs-node01\spaj$"
 $path = "D:\WORK\Task - project\Underwriting-SPAJ\SFTP"
 $childpath = "$date\$day\$depart\$area\$loc"
 $localpath = "$path\01_SPAJ_SOA\$childpath"
@@ -23,8 +22,8 @@ $pathreport = "$path\01_SPAJ_SOA\$date\$day"
 
  # SFTP SESSION
    # authentication
-$passwd = ConvertTo-SecureString "Policy123!" -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential ("sys-ftp-policy-printing", $passwd)
+$passwd = ConvertTo-SecureString "password" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("username", $passwd)
    # create session SFTP 
 $sftpsession = New-SFTPSession -ComputerName sftp-uat.myequity.id -Credential $creds -AcceptKey
 
