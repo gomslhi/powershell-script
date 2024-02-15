@@ -29,8 +29,8 @@ $sftpdest = "/_SPAJ_ESUBMISSION/test/09_SPAJ_ISSUED/$tanggal/$day"
 $destpath = "D:\WORK\Task - project\Underwriting-SPAJ\SFTP\09_SPAJ_ISSUED"
 
    # authentication
-$passwd = ConvertTo-SecureString "Policy123!" -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential ("sys-ftp-policy-printing", $passwd)
+$passwd = ConvertTo-SecureString "password" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("username", $passwd)
 
     # create session SFTP 
 $sftpsession = New-SFTPSession -ComputerName sftp-uat.myequity.id -Credential $creds -AcceptKey
