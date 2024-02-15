@@ -22,8 +22,8 @@ $pathreport = "$path\01_SPAJ_SOA\$date\12"
 
 # SFTP SESSION
    # authentication
-$passwd = ConvertTo-SecureString "Policy123!" -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential ("sys-ftp-policy-printing", $passwd)
+$passwd = ConvertTo-SecureString "password" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("username", $passwd)
 
     # Path folder spaj di SFTP
 $pathspajsoa1 = "/_SPAJ_ESUBMISSION/test/01_SPAJ_SOA/$date/12/$depart/$area/$loc"
